@@ -1,0 +1,89 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href={% static 'formstyle.css' %}>
+</head>
+
+<body>
+    <nav style="display:flex;flex-direction: column;">
+        <a style="text-decoration: none;
+        color: white;
+        font-size: 20px;
+        " href="https://github.com/rabibasukala01/Application-of-Leave">Contribute</a>
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+    </nav>
+    <div>
+        <h1 id="title">Application of Leave</h1>
+        <p id="description">
+            To,
+            The Head of Department,
+            Electronics and Communication Engineering College
+            Khwopa Engineering College
+
+            Dear sir,
+            I was/(will be) absent on the following date due to the below mentioned reason. My parents also have
+            information about this. I will consult with friends about the course that I miss. I know that I may not get
+            a chance to appear in final assessment if absent more than 20% class</p>
+    </div>
+    <div id="content">
+        <form for="name" id="absent-form" action="" method="post">
+            {% csrf_token%}
+            <label id="name-label">
+                <p class="decor">Full Name</p>
+                <input class="box" type="text" name="fullname" id="name" placeholder="Enter your name" required>
+            </label><br>
+
+            <label id="number-label " for=" number">
+                <p class="decor">Roll Number</p>
+                <input class="box" type="number" name="number" id="number" placeholder="Enter your class roll number">
+            </label><br>
+
+            <p class="decor">Year</p>
+            <div class="flexing">
+                <div class="mar"><input type="radio" name="year" value="First" id=""></div>
+                <div>First</div>
+            </div>
+
+            <div class="flexing">
+                <div class="mar"><input type="radio" name="year" value="Second" id=""></div>
+                <div>
+                    Second
+                </div>
+            </div>
+
+            <div class="flexing">
+                <div class="mar"><input type="radio" name="year" value="Third" id=""></div>
+                <div>
+                    Third
+                </div>
+            </div>
+
+            <div class="flexing">
+                <div class="mar"><input type="radio" name="year" value="Fourth" id=""></div>
+                <div>
+                    Fourth
+                </div>
+            </div>
+
+
+            <p class="decor">
+                Reason For Leave
+            </p>
+            <textarea name="reason" id="txtarea" cols="30" rows="10" placeholder="Enter your answer...."></textarea><br>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+
+</body>
+
+</html>
