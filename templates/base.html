@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href={% static 'liststyle.css' %}>
+</head>
+
+<body>
+    <nav class="nav-bar">
+
+        <ul class="navigation-lists">
+
+            <li class="nav-units"><a id="glink"
+                    href="https://github.com/rabibasukala01/Application-of-Leave">Contribute</a>
+            </li>
+            <li class="nav-units"><a id="glink" href="{% url 'firstyear'%}">First</a></li>
+            <li class="nav-units"><a id="glink" href="{% url 'secondyear'%}">Second</a></li>
+            <li class="nav-units"><a id="glink" href="{% url 'thirdyear'%}">Third</a></li>
+            <li class="nav-units"><a id="glink" href="{% url 'fourthyear'%}">Fourth</a></li>
+            <li>
+                <form action="" method="post">
+                    {%csrf_token%}
+                    <input type="text" name="searched" id="searchfield" placeholder="Enter CRN">
+                    <input type="submit" name="submit" value="search" id="search-btn">
+                </form>
+            </li>
+        </ul>
+
+    </nav>
+    <div id="container">
+
+        <table class="table">
+            <h3 style="text-align: center;">TODAY</h3>
+            <colgroup>
+                <col style="width:10%">
+                <col style="width:20%">
+                <col style="width:50%">
+                <col style="width:10%">
+            </colgroup>
+
+
+            <tr>
+
+                <th>Roll no.({% block yearblock%} {%endblock%} year)</th>
+                <th>Name</th>
+                <th>Reason of Leave</th>
+                <th>Time/Date </th>
+
+            </tr>
+            {%if searched_data%}
+            {%for data in searched_data%}
+
+            <tr>
+
+                <td>{{data.roll}}{{year}}</td>
+                <td>{{data.fullname}}</td>
+                <td>{{data.reason}}</td>
+                <td>{{data.createdTime}} <br> {{data.createdDate}}</td>
+
+            </tr>
+            {%endfor%}
+        </table>
+        {%else%}
+        <table class="table">
+            <colgroup>
+                <col style="width:10%">
+                <col style="width:20%">
+                <col style="width:50%">
+                <col style="width:10%">
+            </colgroup>
+            {% for data in today %}
+            <tr>
+                <td>{{data.roll}}</td>
+                <td>{{data.fullname}}</td>
+                <td>{{data.reason}}</td>
+                <td>{{data.createdTime}} <br> {{data.createdDate}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <h3 style="text-align: center;">YESTERDAY</h3>
+
+        <br>
+        <table class="table">
+            <colgroup>
+                <col style="width:10%">
+                <col style="width:20%">
+                <col style="width:50%">
+                <col style="width:10%">
+            </colgroup>
+            {% for data in yesterday %}
+            <tr>
+                <td>{{data.roll}}</td>
+                <td>{{data.fullname}}</td>
+                <td>{{data.reason}}</td>
+                <td>{{data.createdTime}} <br> {{data.createdDate}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <h3 style="text-align: center;">ALL</h3>
+
+        <br>
+        <table class="table">
+            <colgroup>
+                <col style="width:10%">
+                <col style="width:20%">
+                <col style="width:50%">
+                <col style="width:10%">
+            </colgroup>
+            {% for data in remainings %}
+            <tr>
+                <td>{{data.roll}}</td>
+                <td>{{data.fullname}}</td>
+                <td>{{data.reason}}</td>
+                <td>{{data.createdTime}} <br> {{data.createdDate}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {%endif%}
+
+
+    </div>
+
+</body>
+
+</html>

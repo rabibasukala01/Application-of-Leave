@@ -9,6 +9,15 @@ body{
     display: flex;
     justify-content: center;
     }
+
+.navigation-lists{
+    list-style: none;    
+    }
+.nav-units{
+    text-decoration: none;
+    
+ 
+}
 #glink{
     position: relative;
     top: 11px;
