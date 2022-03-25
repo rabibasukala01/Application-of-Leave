@@ -1,4 +1,4 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <link rel="stylesheet" href="formstyle.css">
+    <link rel="stylesheet" href={% static 'formstyle.css' %}>
 </head>
 
 <body>
     <nav >
         {% if messages %}
         {% for message in messages %}
-        <h3 style="color: rgb(247, 0, 0);">{{message}}</h3>
+        {% comment %} <h3 style="color: rgb(247, 0, 0);">{{message}}</h3> {% endcomment %}
         {% endfor %}
         {% endif %}
     </nav>
