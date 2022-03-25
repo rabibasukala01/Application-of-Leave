@@ -8,27 +8,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href={% static 'liststyle.css' %}>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
-    <nav class="nav-bar">
+    <nav >
 
-        <ul class="navigation-lists">
+        <ul >
 
-            <li class="nav-units"><a id="glink"
-                    href="https://github.com/rabibasukala01/Application-of-Leave">Contribute</a>
+            <li ><a
+                    href="https://github.com/rabibasukala01/Application-of-Leave"><img src={%static 'github.png'%} alt="contribute"></a>
             </li>
-            <li class="nav-units"><a id="glink" href="{% url 'firstyear'%}">First</a></li>
-            <li class="nav-units"><a id="glink" href="{% url 'secondyear'%}">Second</a></li>
-            <li class="nav-units"><a id="glink" href="{% url 'thirdyear'%}">Third</a></li>
-            <li class="nav-units"><a id="glink" href="{% url 'fourthyear'%}">Fourth</a></li>
+            <li><a href="{% url 'firstyear'%}">First</a></li>
+            <li><a href="{% url 'secondyear'%}">Second</a></li>
+            <li><a href="{% url 'thirdyear'%}">Third</a></li>
+            <li><a href="{% url 'fourthyear'%}">Fourth</a></li>
             <li>
-                <form action="" method="post">
+                <form action="" method="post" style="margin-left:50px ;">
                     {%csrf_token%}
                     <input type="text" name="searched" id="searchfield" placeholder="Enter CRN">
                     <input type="submit" name="submit" value="search" id="search-btn">
                 </form>
             </li>
+            
         </ul>
 
     </nav>
@@ -44,7 +49,7 @@
             </colgroup>
 
 
-            <tr>
+            <tr style="background-color: #362f4b; color: whitesmoke;">
 
                 <th>Roll no.({% block yearblock%} {%endblock%} year)</th>
                 <th>Name</th>
