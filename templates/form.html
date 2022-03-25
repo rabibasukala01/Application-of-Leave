@@ -7,18 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <link rel="stylesheet" href={% static 'formstyle.css' %}>
+    <link rel="stylesheet" href="formstyle.css">
 </head>
 
 <body>
-    <nav style="display:flex;flex-direction: column;">
-        <a style="text-decoration: none;
-        color: white;
-        font-size: 20px;
-        " href="https://github.com/rabibasukala01/Application-of-Leave">Contribute</a>
+    <nav >
         {% if messages %}
         {% for message in messages %}
-        {{message}}
+        <h3 style="color: rgb(247, 0, 0);">{{message}}</h3>
         {% endfor %}
         {% endif %}
     </nav>
@@ -79,7 +75,7 @@
             <p class="decor">
                 Reason For Leave
             </p>
-            <textarea name="reason" id="txtarea" cols="30" rows="10" placeholder="Enter your answer...."></textarea><br>
+            <textarea name="reason" id="txtarea"  cols="30" rows="10" placeholder="Enter your answer...."></textarea><br>
             <input type="submit" value="Submit" id="submit">
         </form>
     </div>
