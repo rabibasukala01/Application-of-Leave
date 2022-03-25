@@ -1,56 +1,45 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
 }
 
-.nav-bar{
-
-    
-    display: flex;
-    justify-content: center;
-    }
-
-.navigation-lists{
-    list-style: none;    
-    }
-.nav-units{
-    text-decoration: none;
-    
- 
-}
-#glink{
-    position: relative;
-    top: 11px;
-    left: 30px;
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
 
 
-}
+
+
 
 #searchfield{
     margin-top: 10px;
-    height: 20px;
-    border: green solid 1px;
-    border-radius: 2px;
+    height: 25px;
+    border-radius: 5px;
     padding-left: 8px;
+    border:0.1px solid rgb(187, 179, 179);
+
+}
+#searchfield:focus{
+    border-color: #82ffcb;
+    outline: none;
 }
 
 #search-btn{
     margin-top: 10px;
     height: 25px;
     width: 50px;
-    border-radius: 2px;
+    border-radius: 5px;
     text-align: center;
     border: none;
-
-
+    
 }
+
+#search-btn:hover{
+    background-color: #b6acac;
+}
+
 
 #container{
     
-    /* background-color: black; */
+    /* background-color: #362f4b; */
     /* display: flex; */
    
     margin: 20px 20px 20px 20px;
@@ -59,29 +48,59 @@ body{
 }
 
 
-td, th {
-     border: 1px solid #dddddd;
-    text-align: left;
-    padding-top: 8px;
-    padding-bottom: 8px;
-   
-  }
-
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-
-.table {
-    table-layout:fixed;
-    width: 100%;
-    border-collapse: collapse;
-  
-}
- td{
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #362f4b;
+    position:sticky;
+    top:-0.5px; 
     overflow: hidden;
-    padding: 0 2px 0 2px;
-    
-   
-    
+    width: 100%;
+    color: aliceblue;
+    list-style: none;   
+    display: flex;
+    justify-content: center;
+    flex-direction: row; 
+  }
+  
+  li {
+    float: right;
+    color: aliceblue;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+
+  }
+
+  /* table css */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+img{
+    height: 24px;
+    width: 24px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #362f4b;
+    color: white;
 }
