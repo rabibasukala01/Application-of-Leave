@@ -9,23 +9,27 @@
     <title>Form</title>
     <link rel="stylesheet" href={% static 'formstyle.css' %}>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <a
-                    href="https://github.com/rabibasukala01/Application-of-Leave"><img src={%static 'github.png'%} alt="contribute"></a>
-    <nav >
-        {% if messages %}
-        {% for message in messages %}
-        <p style="color: rgb(247, 0, 0);">{{message}}</p>
+    {% if messages %}
+    {% for message in messages %}
+    <div class='msg-{{message.tags}}'>
+        {{message}}
         {% endfor %}
         {% endif %}
-    </nav>
+    </div>
+
+    <div>
+        <a href="https://github.com/rabibasukala01/Application-of-Leave"><img src={%static 'github.png' %}
+                alt="contribute"></a>
+
+    </div>
     <div>
         <h1 id="title">Application of Leave</h1>
-        
+
         <p id="description">
             To,
             The Head of Department,
@@ -81,7 +85,7 @@
             <p class="decor">
                 Reason For Leave
             </p>
-            <textarea name="reason" id="txtarea"  cols="30" rows="10" placeholder="Enter your answer...."></textarea><br>
+            <textarea name="reason" id="txtarea" cols="30" rows="10" placeholder="Enter your answer...."></textarea><br>
             <input type="submit" value="Submit" id="submit">
         </form>
     </div>

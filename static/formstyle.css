@@ -17,6 +17,7 @@ body {
 }
 
 #description {
+   
     color: white;
     text-align: left;
     font-size: 20px;
@@ -107,4 +108,26 @@ body {
 img{
     height: 24px;
     width: 24px;
+    margin-top: 12px;
 }
+
+.msg-error{
+    padding: 2px 5px 2px 5px;
+    margin:-8px;
+    background-color: #FFF3CD;
+    color: #89680A;
+    font-size: 20px;
+    height: 28px;
+    width: 100%;
+}
+.msg-success{
+    background-color: #D4EDDA;
+    color: #3F784C;
+    padding: 2px 5px 2px 5px;
+    margin:-8px;
+    font-size: 20px;
+    height: 28px;
+    width: 100%;
+}
+
+
